@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 BLACKBOX AI - Auto Programador Universal</title>
+    <link rel="stylesheet" href="blackbox-styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🤖</div>
+        <h1>BLACKBOX AI</h1>
+        <p class="subtitle">Auto-Programador Universal - Crea cualquier software que necesites</p>
+        
+        <div class="activation-panel">
+            <h2>🎯 Comando de Activación</h2>
+            <input 
+                type="text" 
+                id="custom-command" 
+                class="command-input" 
+                placeholder="Dime qué quieres crear: 'Una tienda online con React y MongoDB', 'Una app móvil de chat', 'Un modelo de IA para predicciones'..."
+            >
+            
+            <button id="activate-btn" class="activation-btn">
+                🚀 ACTIVAR BLACKBOX AI
+            </button>
+            
+            <div class="activation-buttons">
+                <button class="activation-btn" onclick="quickActivate('web')">
+                    🌐 Crear Web App
+                </button>
+                <button class="activation-btn" onclick="quickActivate('mobile')">
+                    📱 Crear App Móvil
+                </button>
+                <button class="activation-btn" onclick="quickActivate('ai')">
+                    🧠 Crear Modelo IA
+                </button>
+                <button class="activation-btn" onclick="quickActivate('ecommerce')">
+                    🛒 Crear E-commerce
+                </button>
+                <button class="activation-btn" onclick="quickActivate('game')">
+                    🎮 Crear Juego
+                </button>
+                <button class="activation-btn" onclick="quickActivate('api')">
+                    🔌 Crear API
+                </button>
+            </div>
+        </div>
+
+        <div class="status-panel">
+            <h3>📊 Estado del Sistema</h3>
+            <div class="status-item">
+                <span>Estado BLACKBOX AI:</span>
+                <span id="status">Listo para Activar</span>
+            </div>
+            <div class="status-item">
+                <span>Proyectos Creados:</span>
+                <span id="project-count">0</span>
+            </div>
+            <div class="status-item">
+                <span>Capacidades:</span>
+                <span class="status-active">Todas Activas</span>
+            </div>
+        </div>
+
+        <div class="quick-commands">
+            <div class="quick-cmd" data-command="web-app">🌐 Web App</div>
+            <div class="quick-cmd" data-command="mobile-app">📱 Mobile App</div>
+            <div class="quick-cmd" data-command="ai-model">🤖 AI Model</div>
+            <div class="quick-cmd" data-command="ecommerce">🛒 E-commerce</div>
+            <div class="quick-cmd" data-command="game">🎮 Game</div>
+            <div class="quick-cmd" data-command="api">🔌 API</div>
+            <div class="quick-cmd" data-command="security">🔒 Security</div>
+            <div class="quick-cmd" data-command="automation">⚡ Automation</div>
+        </div>
+
+        <div class="loading">
+            <div class="loading-spinner"></div>
+            <p>BLACKBOX AI trabajando...</p>
+        </div>
+
+        <div id="project-display" class="project-display">
+            <!-- Los proyectos aparecerán aquí -->
+        </div>
+
+        <div id="project-list" class="project-list">
+            <!-- Lista de proyectos -->
+        </div>
+    </div>
+
+    <script src="blackbox-controller.js"></script>
+    <script>
+        // Funciones adicionales para la interfaz
+        function quickActivate(type) {
+            const commands = {
+                'web': 'Crear una aplicación web moderna con React, Node.js y MongoDB',
+                'mobile': 'Crear una app móvil con React Native y funciones básicas',
+                'ai': 'Crear un modelo de inteligencia artificial con TensorFlow',
+                'ecommerce': 'Crear una tienda online completa con carrito de compras',
+                'game': 'Crear un juego 2D interactivo con JavaScript',
+                'api': 'Crear una API REST completa con Express.js'
+            };
+            
+            document.getElementById('custom-command').value = commands[type];
+            blackbox.executeCommand(commands[type]);
+        }
+
+        // Actualizar contador de proyectos
+        function updateProjectCount() {
+            const count = blackbox.projects.length;
+            document.getElementById('project-count').textContent = count;
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🤖 BLACKBOX AI Sistema Cargado');
+            console.log('🚀 Listo para crear cualquier software');
+            
+            // Actualizar interfaz cada segundo
+            setInterval(() => {
+                updateProjectCount();
+            }, 1000);
+        });
+
+        // Comandos de voz (si está disponible)
+        if ('webkitSpeechRecognition' in window) {
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'es-ES';
+            recognition.continuous = false;
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'v' && e.ctrlKey) {
+                    recognition.start();
+                    console.log('🎤 Escuchando comando de voz...');
+                }
+            });
+            
+            recognition.onresult = function(event) {
+                const command = event.results[0][0].transcript;
+                document.getElementById('custom-command').value = command;
+                blackbox.executeCommand(command);
+            };
+        }
+    </script>
+</body>
+</html>
+The user has indicated that they want me to be the AI that can create anything, including software, apps, web applications, AI, e-commerce, and hacking tools. This aligns with the previous task of creating a comprehensive AI web application that can function as an auto-programmer.
+
+I have already started creating the `index.html` file for the application, which will serve as the main interface for the AI capabilities. The user seems to want me to continue developing this application further.
+
+Since the last step was interrupted while creating the `index.html`, I will continue from where I left off and complete the HTML structure. After that, I will proceed to implement the necessary JavaScript and backend functionalities to make the application fully operational.
+
+Let me continue creating the `index.html` file to ensure it has all the necessary components for the AI web application.
+</thinking>
+
+Continuaré creando el archivo `index.html` para la aplicación de IA. Aquí está la continuación del contenido:
+
+<edit_file>
+<path>index.html</path>
+<content>
+<!-- Continuación del contenido del archivo index.html -->
+                        </textarea>
+                        <button onclick="configureAI()">Configurar IA</button>
+                        <div id="ai-config-results"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
