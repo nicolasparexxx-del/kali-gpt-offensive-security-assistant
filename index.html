@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI Universal Creator - Auto Programador</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Universal Creator</span>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-section="dashboard">
+                    <i class="fas fa-home"></i> Dashboard
+                </button>
+                <button class="nav-btn" data-section="code-generator">
+                    <i class="fas fa-code"></i> Generador
+                </button>
+                <button class="nav-btn" data-section="web-tools">
+                    <i class="fas fa-globe"></i> Web Tools
+                </button>
+                <button class="nav-btn" data-section="ai-tools">
+                    <i class="fas fa-brain"></i> AI Tools
+                </button>
+                <button class="nav-btn" data-section="admin">
+                    <i class="fas fa-cog"></i> Admin
+                </button>
+            </nav>
+            <div class="user-info">
+                <span id="user-level">Nivel: Auto-Programador</span>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="welcome-banner">
+                    <h1>🚀 Bienvenido al Auto-Programador Universal</h1>
+                    <p>Crea cualquier cosa: software, apps, webs, IA, e-commerce, hacking tools...</p>
+                </div>
+                
+                <div class="quick-actions">
+                    <div class="action-card" onclick="openGenerator('code')">
+                        <i class="fas fa-code"></i>
+                        <h3>Generar Código</h3>
+                        <p>Crea software completo en segundos</p>
+                    </div>
+                    <div class="action-card" onclick="openGenerator('web')">
+                        <i class="fas fa-globe"></i>
+                        <h3>Crear Website</h3>
+                        <p>Diseña páginas web profesionales</p>
+                    </div>
+                    <div class="action-card" onclick="openGenerator('app')">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>App Mobile</h3>
+                        <p>Desarrolla apps para Android/iOS</p>
+                    </div>
+                    <div class="action-card" onclick="openGenerator('ai')">
+                        <i class="fas fa-brain"></i>
+                        <h3>Modelo IA</h3>
+                        <p>Crea tu propia inteligencia artificial</p>
+                    </div>
+                    <div class="action-card" onclick="openGenerator('ecommerce')">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>E-commerce</h3>
+                        <p>Tienda online completa</p>
+                    </div>
+                    <div class="action-card" onclick="openGenerator('security')">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Security Tools</h3>
+                        <p>Herramientas de seguridad</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="projects-created">0</h3>
+                        <p>Proyectos Creados</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="lines-generated">0</h3>
+                        <p>Líneas de Código</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="time-saved">0</h3>
+                        <p>Horas Ahorradas</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="success-rate">100%</h3>
+                        <p>Tasa de Éxito</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Generator Section -->
+            <section id="code-generator" class="section">
+                <h2>🎯 Generador de Código Universal</h2>
+                
+                <div class="generator-container">
+                    <div class="input-section">
+                        <label>¿Qué quieres crear?</label>
+                        <textarea id="project-description" placeholder="Describe lo que necesitas: 'Una app de chat en React con autenticación y base de datos MongoDB...'"></textarea>
+                        
+                        <div class="options-grid">
+                            <div class="option-group">
+                                <label>Tipo de Proyecto:</label>
+                                <select id="project-type">
+                                    <option value="web">Aplicación Web</option>
+                                    <option value="mobile">App Mobile</option>
+                                    <option value="desktop">Software Desktop</option>
+                                    <option value="api">API REST</option>
+                                    <option value="game">Videojuego</option>
+                                    <option value="ai">Modelo IA</option>
+                                </select>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label>Tecnología Principal:</label>
+                                <select id="tech-stack">
+                                    <option value="javascript">JavaScript/Node.js</option>
+                                    <option value="python">Python/Django</option>
+                                    <option value="react">React</option>
+                                    <option value="vue">Vue.js</option>
+                                    <option value="php">PHP/Laravel</option>
+                                    <option value="java">Java/Spring</option>
+                                </select>
+                            </div>
+                            
+                            <div class="option-group">
+                                <label>Base de Datos:</label>
+                                <select id="database">
+                                    <option value="mongodb">MongoDB</option>
+                                    <option value="postgresql">PostgreSQL</option>
+                                    <option value="mysql">MySQL</option>
+                                    <option value="sqlite">SQLite</option>
+                                    <option value="firebase">Firebase</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="generate-btn" onclick="generateCode()">
+                            <i class="fas fa-magic"></i> Generar Código
+                        </button>
+                    </div>
+                    
+                    <div class="output-section">
+                        <div class="code-output">
+                            <div class="code-header">
+                            <span>Resultado Generado</span>
+                            <button onclick="downloadCode()">
+                                <i class="fas fa-download"></i> Descargar
+                            </button>
+                        </div>
+                        <pre id="generated-code">// Tu código aparecerá aquí...</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Web Tools Section -->
+            <section id="web-tools" class="section">
+                <h2>🌐 Herramientas Web</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>Web Scraper</h3>
+                        <input type="url" id="scrape-url" placeholder="URL a analizar">
+                        <button onclick="scrapeWebsite()">Extraer Datos</button>
+                        <div id="scrape-results"></div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>API Tester</h3>
+                        <input type="url" id="api-url" placeholder="https://api.ejemplo.com">
+                        <select id="api-method">
+                            <option>GET</option>
+                            <option>POST</option>
+                            <option>PUT</option>
+                            <option>DELETE</option>
+                        </select>
+                        <button onclick="testAPI()">Probar API</button>
+                        <div id="api-results"></div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>SEO Analyzer</h3>
+                        <input type="url" id="seo-url" placeholder="URL a analizar">
+                        <button onclick="analyzeSEO()">Analizar SEO</button>
+                        <div id="seo-results"></div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>Security Scanner</h3>
+                        <input type="url" id="security-url" placeholder="URL a escanear">
+                        <button onclick="scanSecurity()">Escanear Seguridad</button>
+                        <div id="security-results"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Tools Section -->
+            <section id="ai-tools" class="section">
+                <h2>🧠 Herramientas de IA Avanzadas</h2>
+                
+                <div class="ai-tools-grid">
+                    <div class="ai-tool">
+                        <h3>Chat con IA</h3>
+                        <div class="chat-container">
+                            <div id="chat-messages"></div>
+                            <div class="chat-input">
+                                <input type="text" id="chat-input" placeholder="Pregúntame cualquier cosa...">
+                                <button onclick="sendMessage()">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <h3>Generador de Imágenes</h3>
+                        <input type="text" id="image-prompt" placeholder="Describe la imagen que quieres crear">
+                        <button onclick="generateImage()">Generar Imagen</button>
+                        <div id="image-results"></div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <h3>Analizador de Código</h3>
+                        <textarea id="code-to-analyze" placeholder="Pega tu código aquí..."></textarea>
+                        <button onclick="analyzeCode()">Analizar</button>
+                        <div id="analysis-results"></div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <h3>Optimizador de Rendimiento</h3>
+                        <textarea id="code-to-optimize" placeholder="Pega código para optimizar..."></textarea>
+                        <button onclick="optimizeCode()">Optimizar</button>
+                        <div id="optimization-results"></div>
+                    </div>
