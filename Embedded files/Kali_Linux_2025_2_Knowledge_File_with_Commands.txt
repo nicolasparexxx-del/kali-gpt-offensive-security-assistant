@@ -1,0 +1,75 @@
+Kali Linux 2025.2 Knowledge File for Kali GPT
+
+Version: 2025.2
+Release Date: June 2025
+Use Case: Offensive security, penetration testing, wireless testing, Active Directory analysis, automotive exploitation
+
+General Highlights
+- Kali Linux 2025.2 introduces major updates to the toolset, UX, and hardware compatibility.
+- Emphasis on modular and mobile testing tools, including smartwatch and automotive support.
+- Enhancements align with MITRE ATT&CK mapping and operational efficiency.
+
+Menu & Interface
+- Kali Menu Redesign: Menu is now structured around the MITRE ATT&CK framework, enhancing discoverability of tools based on adversarial behavior stages (e.g., Initial Access, Privilege Escalation).
+- New Desktop Environments:
+  - GNOME 48
+  - KDE Plasma 6.3
+  Performance and stability enhancements, visual polish, and new keyboard shortcuts.
+
+NetHunter & Hardware Support
+- Smartwatch Wi-Fi Injection:
+  - Supported Device: TicWatch Pro 3
+  - Capabilities:
+    - Wireless packet injection
+    - Deauthentication attacks
+    - WPA2 handshake capture
+    - On-watch scripting support via custom GUI overlays
+- NetHunter CARsenal Toolkit:
+  - Focus: Automotive exploitation and CAN bus research
+  - Includes car fuzzers, reverse engineering tools, and vehicle diagnostics modules
+
+AD Reconnaissance
+- BloodHound Community Edition Integration:
+  - Bundled into Kali by default
+  - Full AD ingestor suite available
+  - Improves post-exploitation and privilege escalation mapping in Windows environments
+
+New and Updated Tools (Selection)
+- Newly Added:
+  - car-hack-tools: Automotive attack modules
+  - deauthd: Lightweight deauthentication daemon
+  - aptsim: APT simulation toolkit
+  - ble_hackkit: BLE sniffing and spoofing tools
+  - armory-ng: Embedded systems exploitation
+
+- Updated:
+  - metasploit-framework
+  - nmap
+  - burpsuite
+  - dirbuster
+  - aircrack-ng
+
+System Enhancements
+- Kernel Update: Linux 6.9.x LTS integrated with improved support for modern chipsets and wireless drivers
+- Containerized Tool Support: Tools can now run within Docker and Podman containers by default
+- Live USB Enhancements: Persistence encryption now supports hardware-backed TPM2 modules
+
+Security & Compliance
+- Enhanced compliance mapping to frameworks like MITRE, NIST, and ISO 27001
+- Tool metadata now includes tags for technique coverage (Txxxx IDs)
+- Logging defaults now include anonymized metadata capture for blue team replay
+
+Operational Considerations
+- All new features available in both the Installer and Live ISO variants
+- NetHunter images updated for supported devices, including smartwatches and newer Android ROMs
+- Default credentials and services hardened across base OS
+
+Usage in Kali GPT:
+This knowledge file allows Kali GPT to:
+- Suggest context-specific tools and commands
+- Provide guidance on smartwatch-based wireless attacks
+- Recommend AD enumeration strategies using BloodHound
+- Enable use-case-driven workflows (e.g., vehicle hacking, Wi-Fi audits)
+- Reference updated tool syntax and post-exploitation patterns
+
+End of Knowledge File
