@@ -1,0 +1,30 @@
+services:
+  boldbi:
+   container_name: boldbi
+   image: syncfusion/boldbi:13.1.10-eval
+   restart: always
+   ports:
+     - 8085:80
+   environment:
+      # Required
+     - BOLD_SERVICES_UNLOCK_KEY=xI+34zILSPzYar2EVIJObgRXimXZ/RlKRZoYw2OYr6kZR1B+7QDGamjZqd7aAWaGz0DGiKNraDxvZHCy7Ds1QXi7JPJQ4SItVDL+vcbzfR5xGcbf2J8i44Dz4sqSPRzmCCiEb67tVTtAYYgki6vFoDbnxTNw2XKUXaTcWVa5LotdTNGqDOXcR/Ie7pzsuk5PbpQJFR8/13OD0jeQDVT/iu+rI5ujNcITAGWKB55OO1CBJynwypmTNLnJzA7zqLzayql1cylv9ORXD8OFKHF/KltbH8yXklJrFFcgpbjeTVRT2qvwL/nt/LWsvUM8RgzhpAefASAFzJjZdY7LP/5L1bgO2+Zzdo7b5D3tXMaiSm7kLz5inU1N1XTPN0rK9Pv3ob5RruHjqYIlw7LOJQMJheLqyghkqvYntNAPqqI3j6qm7s1VR87+rkUJ4QlBSKO6D2MUWf6OgdSHPL8rizGkXzK9a+oF7Io75lWMrK3XvdROTwokgthvWDjRIiyO2ffmG/LzWjqLewaUXCZeIMhQ14k+E7eKZdw0j2374H6F67rz/nUHFYLNfcfLEwK8bGkXDCHQNUfZzMfPnk1ZjSjIPhozXCTeN2Vytq4+By8kZfgzKHwomqOFd/aGd8eETEBv4z3f8zNfPA+9NGp/62e2K/6FRtD3d0a0c61+VjAmP+txXSxAZkBFWEt4VEMog8woaDelHIVt4ww/4StdKw2oV+pRil55t12/t2b387/uyu+JQJukrIW2FZ6Q7+AJYLr9pEsY+UTFOeb4af4yh6H7cNKKyHLLwygv38jXvNOBsoVspBteEbSgr3E9ryPT6zz4x1t+zOD8dYsMLXnmIlZlkhE23MflgKmNpkUS35+ozT628yNBoE53doLmGILFp/8B7sKKE4+PBIN9fD19thII9AY8fAzLOVXXPoOSpX3zSJYs4fPQnRrKs3qBF4ARy9SbMnQ/wY3z4YgqYJtn7PkO3cVVRhKLJGZR0gc8pURN5Tojx2GHncPcU+etkris69a7qISddEpKxXftW6zsi7aT+Czh3y/91M++P4PhPRac/zJ7/EDJ27UohR2YCFGJWtyBMdsQ5HHs4FGjWF+Hh/j5ENUhgheGdRbM16C+SK2aE83NVygWDSFlcluyh57lcaEUpWOhskA61gm2+u9N3k0bRg9X9kLANRZfWoTsYN+oKgRAx6NdAOePW4ckIE0sxEY4glFxznOa8bkn4rX0/4MGKYOGoRO/uPwrVquocIJE6FEaP15jltAS2ttj8gkkWeQ44RiklF7738BIlfBKXK4JG6DyGi6OcYVSD1ujMKjF/SpHQphnl5/MlEwCH7nUx4aOFJVV/2xL6BVpwjC2S6B9fkhBr/fJaQPAQt/R+IzmGS+japRDYaUplu4PxLKpwNwpBfCbF8eSktHBnEN/edhzdepven72tw9g5QE7m3Attjv1R2R53HuqYczTs8oEHSYtqBWIjd+Bpc4qqO3F9LLhlnYGQpyyusT52MNYPy8vJ3H0o3oR3wgxJU7okJqM8R0Jb+T1U7AasvKiETKeNJ9nUg==   # Set the unlock key value from the unlock_key.lic file, which can be obtained from the accounts page(https://www.boldbi.com/account).
+      # Optional: Default values are fine for evaluation purposes.
+     - BOLD_SERVICES_DB_TYPE=postgresql                      # Preconfigured PostgreSQL database details that are deployed along with this deployment.
+     - BOLD_SERVICES_DB_HOST=localhost
+     - BOLD_SERVICES_POSTGRESQL_MAINTENANCE_DB=postgres
+     - BOLD_SERVICES_DB_USER=postgres
+     - BOLD_SERVICES_DB_PASSWORD=Admin@123
+     - BOLD_SERVICES_USER_EMAIL=testuser@boldbi.com          # Set the site admin user Mail ID.
+     - BOLD_SERVICES_USER_PASSWORD=Admin@123                 # Set the site admin user password.
+   networks:
+     - boldbi
+   volumes:
+     - boldbi_data:/application/app_data
+     - db_data:/var/lib/postgresql
+
+networks:
+  boldbi:
+  
+volumes:
+  boldbi_data:
+  db_data:
